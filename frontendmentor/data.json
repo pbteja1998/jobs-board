@@ -148,5 +148,35 @@
     "location": "Worldwide",
     "languages": ["JavaScript"],
     "tools": ["React", "Sass"]
+  },
+  {
+    "id": 11,
+    "company": "Coderplex Technologies",
+    "logo": "",
+    "new": false,
+    "featured": false,
+    "position": "Front-end Dev",
+    "role": "Frontend",
+    "level": "Junior",
+    "postedAt": "1mo ago",
+    "contract": "Part Time",
+    "location": "Worldwide",
+    "languages": ["JavaScript"],
+    "tools": ["React", "Sass"]
+  },
+  {
+    "id": 12,
+    "company": "Coderplex",
+    "logo": "",
+    "new": false,
+    "featured": false,
+    "position": "Front-end Dev",
+    "role": "Frontend",
+    "level": "Junior",
+    "postedAt": "1mo ago",
+    "contract": "Part Time",
+    "location": "Worldwide",
+    "languages": ["JavaScript"],
+    "tools": ["React", "Sass"]
   }
 ]

@@ -66,6 +66,14 @@ export default function IndexPage() {
         }
     }
 
+    const getCompanyInitials = (name: string) => {
+        const words = name.split(' ')
+        if (words.length > 1) {
+            return words[0].charAt(0) + words[1].charAt(0)
+        }
+        return words[0].charAt(0)
+    }
+
     return (
         <>
             <div
@@ -129,12 +137,26 @@ export default function IndexPage() {
                         key={job.id}
                     >
                         <div className={'w-20 sm:ml-4 sm:w-24'}>
-                            <img
-                                className={`w-12 transform -translate-y-1/2 sm:translate-y-0 sm:w-20 
+                            {job.logo ? (
+                                <img
+                                    className={`w-12 transform -translate-y-1/2 sm:translate-y-0 sm:w-20 
                                     sm:w-full sm:h-full sm:object-contain`}
-                                src={job.logo}
-                                alt="Logo"
-                            />
+                                    src={job.logo}
+                                    alt="Logo"
+                                />
+                            ) : (
+                                <span
+                                    className={`
+                                        w-12 h-12 sm:w-20 sm:h-20 bg-cyan-0
+                                        transform -translate-y-1/2 sm:translate-y-0 inline-flex 
+                                        items-center justify-center rounded-full 
+                                    `}
+                                >
+                                    <span className="text-base font-semibold leading-none text-white">
+                                        {getCompanyInitials(job.company)}
+                                    </span>
+                                </span>
+                            )}
                         </div>
                         <div className={'sm:ml-6'}>
                             <div className={'flex items-center'}>
