@@ -77,8 +77,8 @@ export default function IndexPage() {
     return (
         <>
             <div
-                className={`px-4 sm:px-10 md:px-16 xl:px-40 h-38 pt-20 bg-cyan-0 bg-no-repeat bg-center 
-                    bg-header-mobile sm:bg-header-desktop sm:bg-repeat-x`}
+                className={`px-4 sm:px-10 md:px-16 xl:px-40 h-38 pt-20 bg-cyan-0 bg-repeat-x bg-center 
+                    bg-header-mobile sm:bg-header-desktop`}
             >
                 {selectedTags.length > 0 && (
                     <div
