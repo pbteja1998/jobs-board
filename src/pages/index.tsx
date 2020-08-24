@@ -77,43 +77,49 @@ export default function IndexPage() {
     return (
         <>
             <div
-                className={`px-10 sm:px-10 md:px-16 xl:px-40 h-38 pt-20 bg-cyan-0 bg-no-repeat bg-center 
+                className={`px-4 sm:px-10 md:px-16 xl:px-40 h-38 pt-20 bg-cyan-0 bg-no-repeat bg-center 
                     bg-header-mobile sm:bg-header-desktop sm:bg-repeat-x`}
             >
                 {selectedTags.length > 0 && (
                     <div
                         className={
-                            'flex items-center my-auto h-18 bg-white shadow-lg transform translate-y-1/2 px-6'
+                            'flex items-center my-auto h-18 bg-white shadow-lg transform translate-y-1/2 px-4'
                         }
                     >
-                        {selectedTags.map((tag: string) => (
-                            <div
-                                key={tag}
-                                className={
-                                    'flex items-center h-8 pl-1 bg-cyan-1 ml-4 rounded overflow-hidden shadow'
-                                }
-                            >
-                                <span
+                        <div
+                            className={
+                                'flex items-center overflow-x-scroll w-10/12 sm:w-11/12'
+                            }
+                        >
+                            {selectedTags.map((tag: string) => (
+                                <div
+                                    key={tag}
                                     className={
-                                        'bg-cyan-1 text-cyan-0 font-semibold text-sm'
+                                        'overflow-visible flex items-center h-8 pl-1 bg-cyan-1 ml-4 rounded overflow-hidden shadow'
                                     }
                                 >
-                                    {tag}
-                                </span>
-                                <span
-                                    className={`h-full w-8 px-2 bg-cyan-0 ml-1 text-white w-7.5 
+                                    <span
+                                        className={
+                                            'bg-cyan-1 text-cyan-0 font-semibold text-sm'
+                                        }
+                                    >
+                                        {tag}
+                                    </span>
+                                    <span
+                                        className={`h-full w-8 px-2 bg-cyan-0 ml-2 text-white w-7.5 
                                         text-xl cursor-pointer hover:bg-cyan-4`}
-                                    tabIndex={0}
-                                    onClick={() => removeTag(tag)}
-                                    onKeyDown={(e) => {
-                                        handleFocus(e, () => removeTag(tag))
-                                    }}
-                                    role={'button'}
-                                >
-                                    x
-                                </span>
-                            </div>
-                        ))}
+                                        tabIndex={0}
+                                        onClick={() => removeTag(tag)}
+                                        onKeyDown={(e) => {
+                                            handleFocus(e, () => removeTag(tag))
+                                        }}
+                                        role={'button'}
+                                    >
+                                        x
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
                         <button
                             className={
                                 'ml-auto text-cyan-0 text-sm hover:underline cursor-pointer font-bold'
@@ -128,7 +134,11 @@ export default function IndexPage() {
                     </div>
                 )}
             </div>
-            <div className={'p-10 bg-cyan-1 sm:px-10 md:px-16 xl:px-40'}>
+            <div
+                className={`p-4 ${
+                    selectedTags.length > 0 && 'pt-9'
+                } bg-cyan-1 sm:px-10 md:px-16 xl:px-40`}
+            >
                 {filteredJobs().map((job: Job) => (
                     <div
                         className={`flex flex-col bg-white mt-10 px-6 pb-6 shadow-lg rounded ${
