@@ -22,3 +22,17 @@ body {
 /* Stop purging. */
 
 /* Your own custom utilities */
+
+.border-l-5 {
+  border-left-width: 5px;
+}
+
+.bg-header-mobile {
+  background-image: url("/images/bg-header-mobile.svg");
+}
+
+@media (min-width: 640px) {
+  .sm\:bg-header-desktop {
+    background-image: url("/images/bg-header-desktop.svg");
+  }
+}
