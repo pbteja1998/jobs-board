@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Head from 'next/head'
 
 import jobs from '../../frontendmentor/data.json'
 
@@ -76,6 +77,9 @@ export default function IndexPage() {
 
     return (
         <>
+            <Head>
+                <title>Jobs Board</title>
+            </Head>
             <div
                 className={`px-4 sm:px-10 md:px-16 xl:px-40 h-38 pt-20 bg-cyan-0 bg-repeat-x bg-center 
                     bg-header-mobile sm:bg-header-desktop`}
